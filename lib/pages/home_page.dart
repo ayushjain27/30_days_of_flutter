@@ -68,20 +68,22 @@ class _HomePageState extends State<HomePage> {
       // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)? ListView.builder(
-          // itemCount: dummyList.length,
-          itemCount: CatalogModel.items.length,
-          // itemBuilder: (context, index) {
-          itemBuilder: (context, index) => ItemWidget(
-            item: CatalogModel.items[index]),
-            // return ItemWidget(
-            //   item: dummyList[index],
-            // );
-            // return ItemWidget(item: CatalogModel.items[index]);
-          // },
-        ):Center(
-          child: CircularProgressIndicator(),
-        ),
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? ListView.builder(
+                // itemCount: dummyList.length,
+                itemCount: CatalogModel.items.length,
+                // itemBuilder: (context, index) {
+                itemBuilder: (context, index) =>
+                    ItemWidget(item: CatalogModel.items[index]),
+                // return ItemWidget(
+                //   item: dummyList[index],
+                // );
+                // return ItemWidget(item: CatalogModel.items[index]);
+                // },
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
 
       drawer: MyDrawer(),
