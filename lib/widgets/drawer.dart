@@ -15,7 +15,7 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                // decoration: BoxDecoration(color: Colors.deepOrange),
+                // dec8oration: BoxDecoration(color: Colors.deepOrange),
                 accountName: Text("Tom and Jerry"),
                 accountEmail: Text("tomandjerry@gmail.com"),
                 // currentAccountPicture: Image.network(imageUrl),
