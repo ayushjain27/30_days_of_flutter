@@ -52,12 +52,7 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CartList extends StatefulWidget {
-  @override
-  State<_CartList> createState() => _CartListState();
-}
-
-class _CartListState extends State<_CartList> {
+class _CartList extends StatelessWidget{
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
@@ -72,7 +67,7 @@ class _CartListState extends State<_CartList> {
                 icon: Icon(Icons.remove_circle_outline),
                 onPressed: () {
                   _cart.remove(_cart.items[index]);
-                  setState(() {});
+                  // setState(() {});
                 },
               ),
               // title: "Item 1".text.make(),
@@ -81,3 +76,33 @@ class _CartListState extends State<_CartList> {
           );
   }
 }
+
+// class _CartList extends StatefulWidget {
+//   @override
+//   State<_CartList> createState() => _CartListState();
+// }
+
+// class _CartListState extends State<_CartList> {
+//   final _cart = CartModel();
+//   @override
+//   Widget build(BuildContext context) {
+//     return _cart.items.isEmpty
+//         ? "Nothing to show".text.xl3.makeCentered()
+//         : ListView.builder(
+//             // itemCount: 5,
+//             itemCount: _cart.items.length,
+//             itemBuilder: (context, index) => ListTile(
+//               leading: Icon(Icons.done),
+//               trailing: IconButton(
+//                 icon: Icon(Icons.remove_circle_outline),
+//                 onPressed: () {
+//                   _cart.remove(_cart.items[index]);
+//                   setState(() {});
+//                 },
+//               ),
+//               // title: "Item 1".text.make(),
+//               title: _cart.items[index].name.text.make(),
+//             ),
+//           );
+//   }
+// }
