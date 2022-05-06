@@ -58,6 +58,7 @@ class _CartList extends StatelessWidget {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
@@ -67,12 +68,13 @@ class _CartList extends StatelessWidget {
             itemBuilder: (context, index) => ListTile(
               leading: Icon(Icons.done),
               trailing: IconButton(
-                icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  _cart.remove(_cart.items[index]);
+                  icon: Icon(Icons.remove_circle_outline),
+                  // onPressed: ()  {
+                  onPressed: () => RemoveMutation(_cart.items[index])
+                  // _cart.remove(_cart.items[index]);
                   // setState(() {});
-                },
-              ),
+                  // },
+                  ),
               // title: "Item 1".text.make(),
               title: _cart.items[index].name.text.make(),
             ),
